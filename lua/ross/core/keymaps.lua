@@ -23,3 +23,8 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- Finds current
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- Help tag display
 
+--floating terminal
+-- keymap.set("n", "<M-3>", "<cmd>")
+keymap.set('n', '<M-3>', '<CMD>lua require("FTerm").toggle()<CR>')
+keymap.set('t', '<M-3>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+

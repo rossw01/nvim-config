@@ -95,6 +95,10 @@ return packer.startup(function(use)
   use("SirVer/ultisnips")
   use("mlaursen/vim-react-snippets")
 
+  --Floating Terminal
+  -- use("voldikss/vim-floaterm")
+  use("numToStr/FTerm.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
