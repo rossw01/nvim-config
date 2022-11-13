@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/rw01/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FTerm.nvim"] = {
+    loaded = true,
+    path = "/home/rw01/.local/share/nvim/site/pack/packer/start/FTerm.nvim",
+    url = "https://github.com/numToStr/FTerm.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/rw01/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -209,10 +214,20 @@ _G.packer_plugins = {
     path = "/home/rw01/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/home/rw01/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
   ["vim-nightfly-guicolors"] = {
     loaded = true,
     path = "/home/rw01/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
+  ["vim-react-snippets"] = {
+    loaded = true,
+    path = "/home/rw01/.local/share/nvim/site/pack/packer/start/vim-react-snippets",
+    url = "https://github.com/mlaursen/vim-react-snippets"
   },
   ["vim-surround"] = {
     loaded = true,
