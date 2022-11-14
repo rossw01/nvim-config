@@ -1,5 +1,4 @@
 local opt = vim.opt
-
 -- line numbers
 opt.number = true;
 
@@ -38,3 +37,4 @@ opt.splitbelow = true
 opt.iskeyword:append("-")
 
 opt.scrolloff = 8 
+

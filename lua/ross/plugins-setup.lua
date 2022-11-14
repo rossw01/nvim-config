@@ -99,6 +99,12 @@ return packer.startup(function(use)
   -- use("voldikss/vim-floaterm")
   use("numToStr/FTerm.nvim")
 
+  -- More tab control, tab icons, clean tab names
+  use("romgrk/barbar.nvim")
+
+  -- WhichKey
+  use("folke/which-key.nvim");
+
   if packer_bootstrap then
     require("packer").sync()
   end
