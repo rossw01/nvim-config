@@ -22,8 +22,8 @@ keymap.set("n", "<M-7>", ":BufferGoto 7<CR>")
 keymap.set("n", "<M-8>", ":BufferGoto 8<CR>")
 
 --resize window
-keymap.set("n", "<M-h>", ":vertical resize -5<CR>")
-keymap.set("n", "<M-l>", ":vertical resize +5<CR>")
+keymap.set("n", "<M-h>", ":vertical resize -3<CR>")
+keymap.set("n", "<M-l>", ":vertical resize +3<CR>")
 
 --nvim tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
