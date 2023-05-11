@@ -2,7 +2,7 @@
 
 Half of this is copy paste 😎
 
-![image](https://user-images.githubusercontent.com/56947241/200706676-84688eb2-7d76-4dd3-9f4b-53ffbe3347df.png)
+![image](https://github.com/rossw01/nvim-config/assets/56947241/e6cc43f1-461c-4d42-81fb-3e86edfaf6c9)
 
 ### Packages:
 
