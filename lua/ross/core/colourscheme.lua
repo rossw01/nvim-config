@@ -1,8 +1,11 @@
-vim.cmd("colorscheme nightfly")
+-- vim.cmd("colorscheme nightfly")
 
-local status, _ = pcall(vim.cmd, "colorscheme nightfly")
-if not status then 
-  print("Colourscheme not found")
-  return
-end
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+
+--local status, _ = pcall()
+--if not status then 
+--  print("Colourscheme not found")
+--  return
+--end
 
