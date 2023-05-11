@@ -30,6 +30,8 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
   --Colour scheme
   use("bluz71/vim-nightfly-guicolors")
+  use("AlexvZyl/nordic.nvim")
+  use("ellisonleao/gruvbox.nvim")
   --Tmux & window split navigation (C-h/j/k/l)
   use("christoomey/vim-tmux-navigator")
   

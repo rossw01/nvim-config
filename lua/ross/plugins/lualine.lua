@@ -19,7 +19,7 @@ local colors = {
 local bubbles_theme = {
   normal = {
     a = { gui = "bold", fg = colors.black, bg = colors.violet },
-    b = { fg = colors.white, bg = colors.lNavy},
+    b = { fg = colors.white, bg = colors.grey},
     c = { fg = colors.navy, bg = colors.navy},
   },
 
@@ -37,7 +37,7 @@ local bubbles_theme = {
 
 require('lualine').setup {
   options = {
-    theme = bubbles_theme,
+    theme = 'gruvbox',
     component_separators = '(',
     section_separators = { left = '', right = '' },
   },
