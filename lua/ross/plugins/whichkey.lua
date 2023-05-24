@@ -5,8 +5,14 @@ end
 
 local mappings = {
   f = {"Telescope", "Telescope"},
-  n = {":nohl", "Unhighlight selected"},
-  t = {"Tabs"}
+  n = {"Unhighlight"},
+  nh = {"Unhighlight"},
+  t = {"Tabs"},
+  e = {"Toggle File Explorer"},
+  tt = {"New Tab"},
+  tw = {"Close Tab"},
+  th = {"Previous Tab"},
+  tl = {"Next Tab"},
 }
 local opts = {prefix = "<leader>"}
 whichkey.register(mappings, opts)

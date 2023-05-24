@@ -29,8 +29,8 @@ return packer.startup(function(use)
   --lua functions that many plugins require
   use("nvim-lua/plenary.nvim")
   --Colour scheme
-  use("bluz71/vim-nightfly-guicolors")
-  use("AlexvZyl/nordic.nvim")
+  -- use("bluz71/vim-nightfly-guicolors")
+  -- use("AlexvZyl/nordic.nvim")
   use("ellisonleao/gruvbox.nvim")
   --Tmux & window split navigation (C-h/j/k/l)
   use("christoomey/vim-tmux-navigator")
@@ -98,7 +98,6 @@ return packer.startup(function(use)
   use("mlaursen/vim-react-snippets")
 
   --Floating Terminal
-  -- use("voldikss/vim-floaterm")
   use("numToStr/FTerm.nvim")
 
   -- More tab control, tab icons, clean tab names

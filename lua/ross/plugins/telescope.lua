@@ -8,16 +8,4 @@ if not actions_setup then
   return
 end
 
-telescope.setup({
-  defaults = {
-    mappings = {
-      i = {
-        ["<C-k>"] = actions.move_selection_previous,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-h>"] = actions.send_selected_to_qflist + actions.open_qflist,
-      }
-    }
-  }
-})
-
 telescope.load_extension("fzf")
