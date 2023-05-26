@@ -13,12 +13,14 @@
 - cmp-path
 - cmp_luasnip
 - friendly-snippets
+- gruvbox.nvim
 - lspkind.nvim
 - lspsaga.nvim
 - lualine.nvim
 - mason-lspconfig.nvim
 - mason-null-ls.nvim
 - mason.nvim
+- nordic.nvim
 - null-ls.nvim
 - nvim-autopairs
 - nvim-cmp
