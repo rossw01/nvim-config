@@ -1,5 +1,5 @@
 # Neovim Config 😎
-![image](https://github.com/rossw01/nvim-config/assets/56947241/e6cc43f1-461c-4d42-81fb-3e86edfaf6c9)
+![image](https://github.com/rossw01/nvim-config/assets/56947241/34ad7c9b-69e6-4f73-a6ac-e3fc81ed6f97)
 
 ### Packages:
 
