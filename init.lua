@@ -1,6 +1,7 @@
 require "ross.plugins-setup"
 require "ross.core.options"
 require "ross.core.keymaps"
+require "ross.plugins.kanagawa-paper" -- Must come before colourscheme
 require "ross.core.colourscheme"
 require "ross.plugins.comment"
 require "ross.plugins.nvim-tree"
