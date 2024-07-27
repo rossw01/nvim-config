@@ -1,7 +1,8 @@
-# Neovim Config 😎
-![image](https://github.com/rossw01/nvim-config/assets/56947241/34ad7c9b-69e6-4f73-a6ac-e3fc81ed6f97)
+# ⚙️ nvim-config (nerd haha)
+![Screenshot 2024-07-27 at 06 19 47](https://github.com/user-attachments/assets/f823de96-32a9-4f35-9d93-aad151beed15)
 
-### Packages:
+
+## 📦 Packages:
 
 - Comment.nvim
 - FTerm.nvim
@@ -13,14 +14,14 @@
 - cmp-path
 - cmp_luasnip
 - friendly-snippets
-- gruvbox.nvim
+- kanagawa-paper.nvim
 - lspkind.nvim
 - lspsaga.nvim
 - lualine.nvim
 - mason-lspconfig.nvim
 - mason-null-ls.nvim
 - mason.nvim
-- nordic.nvim
+- mini.icons
 - null-ls.nvim
 - nvim-autopairs
 - nvim-cmp
@@ -35,7 +36,6 @@
 - telescope.nvim
 - typescript.nvim
 - ultisnips
-- vim-nightfly-guicolors
 - vim-react-snippets
 - vim-surround
 - vim-tmux-navigator
