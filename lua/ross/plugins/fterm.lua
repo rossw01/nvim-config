@@ -4,5 +4,5 @@
 -- end
 
 require'FTerm'.setup({
-  border = 'double',
+  border = 'rounded',
 })

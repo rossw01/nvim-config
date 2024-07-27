@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 --general
 
-keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x') -- Prevents x storing deleted char in register
 

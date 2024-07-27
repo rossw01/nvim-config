@@ -19,9 +19,9 @@ mason_lspconfig.setup({
   ensure_installed = {
     "tsserver",
     "html",
-    "cssls",  -- css 
-    -- "clangd", -- C
-    -- "cmake", -- cmake
+    "cssls",
+    -- "clangd",
+    -- "cmake",
     "dockerls", --docker
     "eslint", -- eslint
     "bashls", -- bash

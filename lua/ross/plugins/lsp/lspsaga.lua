@@ -11,5 +11,7 @@ saga.setup({
   definition_action_keys = {
     edit = "<CR>",
   },
-
+  ui = {
+    sign = false,
+  },
 })

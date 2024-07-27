@@ -9,6 +9,7 @@ autopairs.setup({
   check_ts = true, -- enable treesitter
   ts_config = {
     javascript = { "template_string" }, -- don't add pairs in javscript template_string treesitter nodes
+    typescript = { "template_string" },
     java = false, -- don't check treesitter on java
   },
 })
@@ -27,3 +28,14 @@ end
 
 -- make autopairs and completion work together
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+local tspairs_setup, tspairs = pcall(require, "nvim-ts-autotag")
+if not tspairs_setup then
+  return
+end
+
+tspairs.setup({
+  opts = {
+    enable_close = true,
+  }
+})

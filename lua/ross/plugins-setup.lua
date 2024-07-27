@@ -29,12 +29,12 @@ return packer.startup(function(use)
   --lua functions that many plugins require
   use("nvim-lua/plenary.nvim")
   --Colour scheme
-  -- use("bluz71/vim-nightfly-guicolors")
-  -- use("AlexvZyl/nordic.nvim")
-  use("ellisonleao/gruvbox.nvim")
+  use("sho-87/kanagawa-paper.nvim")
+  -- use("ellisonleao/gruvbox.nvim")
+
   --Tmux & window split navigation (C-h/j/k/l)
   use("christoomey/vim-tmux-navigator")
-  
+
   use("tpope/vim-surround") -- Surround something (y-s-motion[e.g. w]-char to surround)
   -- Can also delete surrounding char (d-s-motion-char) or change (c-s-motion-char)
   use("vim-scripts/ReplaceWithRegister") -- (Y-w) then g-r-w to replace
@@ -105,6 +105,9 @@ return packer.startup(function(use)
 
   -- WhichKey
   use("folke/which-key.nvim");
+
+  -- Icons used by WhichKey
+  use("echasnovski/mini.icons");
 
   if packer_bootstrap then
     require("packer").sync()
