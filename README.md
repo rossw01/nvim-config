@@ -1,6 +1,6 @@
 # ⚙️ nvim-config (nerd haha)
-![Screenshot 2024-07-27 at 06 19 47](https://github.com/user-attachments/assets/f823de96-32a9-4f35-9d93-aad151beed15)
 
+![Screenshot 2024-07-27 at 06 19 47](https://github.com/user-attachments/assets/f823de96-32a9-4f35-9d93-aad151beed15)
 
 ## 📦 Packages:
 
@@ -39,4 +39,5 @@
 - vim-react-snippets
 - vim-surround
 - vim-tmux-navigator
+- vimtex
 - which-key.nvim
