@@ -109,6 +109,8 @@ return packer.startup(function(use)
   -- Icons used by WhichKey
   use("echasnovski/mini.icons");
 
+  use("lervag/vimtex");
+
   if packer_bootstrap then
     require("packer").sync()
   end

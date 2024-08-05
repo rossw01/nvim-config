@@ -40,7 +40,10 @@ opt.scrolloff = 8
 
 opt.fillchars:append {eob = " "}
 
+vim.g.vimtex_view_method = 'sioyek'
+
 -- TODO: Move these to their own neovide lua file
+-- hehe its been years and i've still not done it :P
 if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0.1
   vim.g.neovide_input_macos_alt_is_meta = true

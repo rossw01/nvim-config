@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " " -- i loveeee combining localleader and leader
 
 local keymap = vim.keymap
 --general
@@ -39,4 +40,3 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- Help tag displa
 --floating terminal
 keymap.set('n', '<M-3>', '<CMD>lua require("FTerm").toggle()<CR>')
 keymap.set('t', '<M-3>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-

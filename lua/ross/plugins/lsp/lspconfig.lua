@@ -91,6 +91,11 @@ lspconfig["clangd"].setup({
   }
 })
 
+lspconfig["texlab"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
 typescript.setup({
   server = {
     capabilities = capabilities,
