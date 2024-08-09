@@ -20,15 +20,15 @@ mason_lspconfig.setup({
     "tsserver",
     "html",
     "cssls",
-    -- "clangd",
+    "clangd",
     -- "cmake",
-    "dockerls", --docker
-    "eslint", -- eslint
-    "bashls", -- bash
-    "emmet_ls", -- emmet
-    "jsonls", -- json 
-    -- "marksman", -- markdown
-    "rust_analyzer", -- rust
+    "dockerls",
+    "eslint",
+    "bashls",
+    "emmet_ls",
+    "jsonls",
+    "marksman",
+    "rust_analyzer",
   }
 })
 

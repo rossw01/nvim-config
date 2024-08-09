@@ -79,6 +79,11 @@ lspconfig["emmet_ls"].setup({
   on_attach = on_attach
 })
 
+lspconfig["marksman"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
 
 lspconfig["clangd"].setup({
   capabilities = capabilities,
