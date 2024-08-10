@@ -15,5 +15,10 @@ nvimtree.setup({
      },
    },
  },
+  filters = {
+    exclude = {
+      ".env",
+    }
+  }
 })
 
