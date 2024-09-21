@@ -18,6 +18,8 @@ opt.smartcase = true
 
 --cursor line
 opt.cursorline = true
+opt.guicursor = "n-v-i-c:block-Cursor"
+
 
 --appearance
 opt.termguicolors = true
@@ -40,7 +42,7 @@ opt.scrolloff = 8
 
 opt.fillchars:append {eob = " "}
 
-vim.g.vimtex_view_method = 'sioyek'
+vim.g.vimtex_view_method = 'zathura'
 
 -- TODO: Move these to their own neovide lua file
 -- hehe its been years and i've still not done it :P

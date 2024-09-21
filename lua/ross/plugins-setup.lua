@@ -111,6 +111,8 @@ return packer.startup(function(use)
 
   use("lervag/vimtex");
 
+  use("wakatime/vim-wakatime")
+
   if packer_bootstrap then
     require("packer").sync()
   end

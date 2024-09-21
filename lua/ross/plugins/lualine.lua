@@ -21,8 +21,7 @@ require('lualine').setup {
     lualine_x = {},
     lualine_y = { 'filetype' },
     lualine_z = {
-      { 'location'},
-      -- { 'location', left_padding = 2, right_padding = 2 },
+      { 'location' },
     },
   },
   inactive_sections = {
