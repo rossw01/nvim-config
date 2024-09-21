@@ -29,6 +29,7 @@ mason_lspconfig.setup({
     "jsonls",
     "marksman",
     "rust_analyzer",
+    "solargraph",
   }
 })
 
