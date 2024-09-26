@@ -34,7 +34,6 @@
 - plenary.nvim
 - telescope-fzf-native.nvim
 - telescope.nvim
-- typescript.nvim
 - ultisnips
 - vim-react-snippets
 - vim-surround
