@@ -8,11 +8,6 @@ if not cmp_nvim_lsp_status then
   return
 end
 
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-  return
-end
-
 local keymap = vim.keymap
 
 -- enable keybinds for available lsp server
@@ -32,13 +27,6 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
-
-  -- typescript specific keymaps (e.g. rename file and update imports)
-  if client.name == "tsserver" then
-    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
-  end
 end
 
 -- used to enable autocompletion
@@ -64,7 +52,7 @@ lspconfig["jsonls"].setup({
   on_attach = on_attach
 })
 
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach
 })
@@ -74,17 +62,18 @@ lspconfig["rust_analyzer"].setup({
   on_attach = on_attach
 })
 
+lspconfig["ruby_lsp"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "ruby", "eruby" },
+})
+
 lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 })
 
 lspconfig["marksman"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
-lspconfig["solargraph"].setup({
   capabilities = capabilities,
   on_attach = on_attach
 })
@@ -103,11 +92,4 @@ lspconfig["clangd"].setup({
 lspconfig["texlab"].setup({
   capabilities = capabilities,
   on_attach = on_attach
-})
-
-typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  }
 })

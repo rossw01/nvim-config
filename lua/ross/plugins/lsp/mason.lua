@@ -17,7 +17,7 @@ mason.setup()
 
 mason_lspconfig.setup({
   ensure_installed = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "clangd",
@@ -29,7 +29,7 @@ mason_lspconfig.setup({
     "jsonls",
     "marksman",
     "rust_analyzer",
-    "solargraph",
+    "ruby_lsp",
   }
 })
 
