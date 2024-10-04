@@ -27,7 +27,6 @@ mason_lspconfig.setup({
     "bashls",
     "emmet_ls",
     "jsonls",
-    "marksman",
     "rust_analyzer",
     "ruby_lsp",
   }

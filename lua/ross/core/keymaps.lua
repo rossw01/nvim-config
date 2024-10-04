@@ -8,7 +8,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x') -- Prevents x storing deleted char in register
 
 --Window management
-keymap.set("n", "<leader>tt", ":tabnew<CR>")
+keymap.set("n", "<leader>tt", ":enew<CR>")
 keymap.set("n", "<M-w>", ":BufferClose<CR>")
 keymap.set("n", "<leader>tl", ":BufferNext<CR>")
 keymap.set("n", "<leader>th", ":BufferPrevious<CR>")
