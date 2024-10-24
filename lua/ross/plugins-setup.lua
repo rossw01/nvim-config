@@ -96,9 +96,6 @@ return packer.startup(function(use)
   use("SirVer/ultisnips")
   use("mlaursen/vim-react-snippets")
 
-  --Floating Terminal
-  use("numToStr/FTerm.nvim")
-
   -- More tab control, tab icons, clean tab names
   use("romgrk/barbar.nvim")
 

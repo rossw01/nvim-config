@@ -5,7 +5,6 @@
 ## 📦 Packages:
 
 - Comment.nvim
-- FTerm.nvim
 - LuaSnip
 - ReplaceWithRegister
 - barbar.nvim
