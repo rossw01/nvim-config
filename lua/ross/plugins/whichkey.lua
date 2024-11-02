@@ -10,6 +10,7 @@ whichkey.add({
   { "<leader>fw", desc = "Search", icon = {icon = "󰭎", color = "purple"}},
   { "<leader>fc", desc = "Search String", icon = {icon = "󰭎", color = "purple"}},
   { "<leader>fh", desc = "Search :help", icon = {icon = "󰭎", color = "purple"}},
+  { "<leader>fu", desc = "Search Undo Tree", icon = {icon = "󰭎", color = "purple"}},
   { "<leader>n", desc = "Unhighlight", icon = {icon = "󰸱", color = "yellow"}},
   { "<leader>nh", desc = "Unhighlight", icon = {icon = "󰸱", color = "yellow"}},
   { "<leader>t", desc = "Tabs", icon = {icon = "󰓩", color = "blue"}},

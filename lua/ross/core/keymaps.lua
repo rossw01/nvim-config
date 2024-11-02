@@ -36,3 +36,4 @@ keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>") -- Find text throu
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- Finds current str cursor is on
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- Help tag display
+keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")

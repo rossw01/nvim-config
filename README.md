@@ -33,6 +33,7 @@
 - packer.nvim
 - plenary.nvim
 - telescope-fzf-native.nvim
+- telescope-undo.nvim
 - telescope.nvim
 - ultisnips
 - vim-react-snippets
