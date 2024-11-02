@@ -66,6 +66,8 @@ lspconfig["ruby_lsp"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "ruby", "eruby" },
+  mason = false,
+  cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") }
 })
 
 lspconfig["emmet_ls"].setup({
