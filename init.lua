@@ -5,6 +5,7 @@ require "ross.plugins.kanagawa-paper" -- Must come before colourscheme
 require "ross.core.colourscheme"
 require "ross.plugins.comment"
 require "ross.plugins.nvim-tree"
+require "ross.plugins.git-blame" -- Must come before lualine
 require "ross.plugins.lualine"
 require "ross.plugins.telescope"
 require "ross.plugins.nvim-cmp"

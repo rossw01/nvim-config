@@ -2,6 +2,8 @@
 -- Authors: lokesh-krishna, rossw01
 -- MIT license, see LICENSE for more details.
 
+gitblame = require('gitblame')
+
 require('lualine').setup {
   options = {
     disabled_filetypes = { 
@@ -14,11 +16,15 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {
-      { 'mode', right_padding = 2, left_padding = 2 },
+      { 'mode', right_padding = 1, left_padding = 2 },
     },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = {},
-    lualine_x = {},
+    lualine_b = { 'filename' },
+    lualine_c = { 'branch' },
+    lualine_x = { {
+      function ()
+        return gitblame.get_current_blame_text() or ''
+      end
+    } },
     lualine_y = { 'filetype' },
     lualine_z = {
       { 'location' },
@@ -30,7 +36,7 @@ require('lualine').setup {
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'location' },
+    lualine_z = {},
   },
   tabline = {},
   extensions = {},

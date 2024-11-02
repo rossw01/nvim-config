@@ -109,6 +109,8 @@ return packer.startup(function(use)
 
   use("wakatime/vim-wakatime")
 
+  use("f-person/git-blame.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
