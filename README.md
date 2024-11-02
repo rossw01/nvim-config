@@ -13,6 +13,7 @@
 - cmp-path
 - cmp_luasnip
 - friendly-snippets
+- git-blame.nvim
 - kanagawa-paper.nvim
 - lspkind.nvim
 - lspsaga.nvim
@@ -37,5 +38,6 @@
 - vim-react-snippets
 - vim-surround
 - vim-tmux-navigator
+- vim-wakatime
 - vimtex
 - which-key.nvim
