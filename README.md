@@ -4,24 +4,23 @@
 
 ## 📦 Packages:
 
-- Comment.nvim
-- LuaSnip
-- ReplaceWithRegister
-- barbar.nvim
+- bufferline.nvim
 - cmp-buffer
 - cmp-nvim-lsp
 - cmp-path
 - cmp_luasnip
+- Comment.nvim
 - friendly-snippets
 - git-blame.nvim
 - kanagawa-paper.nvim
+- lazy.nvim
 - lspkind.nvim
 - lspsaga.nvim
 - lualine.nvim
+- LuaSnip
 - mason-lspconfig.nvim
 - mason-null-ls.nvim
 - mason.nvim
-- mini.icons
 - null-ls.nvim
 - nvim-autopairs
 - nvim-cmp
@@ -30,15 +29,14 @@
 - nvim-treesitter
 - nvim-ts-autotag
 - nvim-web-devicons
-- packer.nvim
 - plenary.nvim
+- ReplaceWithRegister
 - telescope-fzf-native.nvim
 - telescope-undo.nvim
 - telescope.nvim
 - ultisnips
 - vim-react-snippets
 - vim-surround
-- vim-tmux-navigator
 - vim-wakatime
 - vimtex
 - which-key.nvim
