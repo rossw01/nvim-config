@@ -11,21 +11,24 @@ require('lualine').setup {
       "NvimTree",
     },
     theme = 'kanagawa-paper',
-    component_separators = {left = " ", right = " "},
+    component_separators = {left = "", right = ""},
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = {
-      { 'mode', right_padding = 1, left_padding = 2 },
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch' },
+    lualine_c = {},
+    lualine_x = {
+      {
+        function ()
+          return gitblame.get_current_blame_text() or ''
+        end
+      }
     },
-    lualine_b = { 'filename' },
-    lualine_c = { 'branch' },
-    lualine_x = { {
-      function ()
-        return gitblame.get_current_blame_text() or ''
-      end
-    } },
-    lualine_y = { 'filetype' },
+    lualine_y = {
+      { 'filetype', icon_only = true,  padding = { left = 1, right = 0 } },
+      { 'filename' }
+    },
     lualine_z = {
       { 'location' },
     },
