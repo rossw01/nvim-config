@@ -9,18 +9,13 @@ keymap.set("n", "x", '"_x') -- Prevents x storing deleted char in register
 
 --Window management
 keymap.set("n", "<leader>tt", ":enew<CR>")
-keymap.set("n", "<M-w>", ":BufferClose<CR>")
-keymap.set("n", "<leader>tl", ":BufferNext<CR>")
-keymap.set("n", "<leader>th", ":BufferPrevious<CR>")
-keymap.set("n", "<leader>tw", ":BufferClose<CR>")
-keymap.set("n", "<C-1>", ":BufferGoto 1<CR>")
-keymap.set("n", "<C-2>", ":BufferGoto 2<CR>")
-keymap.set("n", "<C-3>", ":BufferGoto 3<CR>")
-keymap.set("n", "<C-4>", ":BufferGoto 4<CR>")
-keymap.set("n", "<C-5>", ":BufferGoto 5<CR>")
-keymap.set("n", "<C-6>", ":BufferGoto 6<CR>")
-keymap.set("n", "<C-7>", ":BufferGoto 7<CR>")
-keymap.set("n", "<C-8>", ":BufferGoto 8<CR>")
+keymap.set("n", "<leader>tl", ":bnext<CR>")
+keymap.set("n", "<leader>th", ":bprev<CR>")
+keymap.set("n", "<leader>tw", ":bdelete<CR>")
+keymap.set("n", "<C-h>", "<C-w>h")
+keymap.set("n", "<C-l>", "<C-w>l")
+keymap.set("n", "<C-j>", "<C-w>j")
+keymap.set("n", "<C-k>", "<C-w>k")
 
 
 --resize window

@@ -1,6 +1,6 @@
+require "ross.core.keymaps"
 require "ross.plugins-setup"
 require "ross.core.options"
-require "ross.core.keymaps"
 require "ross.plugins.kanagawa-paper" -- Must come before colourscheme
 require "ross.core.colourscheme"
 require "ross.plugins.comment"
@@ -16,5 +16,4 @@ require "ross.plugins.lsp.null-ls"
 require "ross.plugins.autopairs"
 require "ross.plugins.treesitter"
 require "ross.plugins.autotag"
-require "ross.plugins.whichkey"
 require "ross.plugins.vimtex"

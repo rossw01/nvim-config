@@ -1,112 +1,86 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
   end
-  return false
 end
 
-local packer_bootstrap = ensure_packer()
+vim.opt.rtp:prepend(lazypath)
 
-local status,packer = pcall(require, "packer")
-if not status then
+local lazy_status, lazy = pcall(require, "lazy")
+if not lazy_status then
   return
 end
 
-return packer.startup(function(use)
-  use("wbthomason/packer.nvim")
-
-  --lua functions that many plugins require
-  use("nvim-lua/plenary.nvim")
-  --Colour scheme
-  use("sho-87/kanagawa-paper.nvim")
-  -- use("ellisonleao/gruvbox.nvim")
-
-  --Tmux & window split navigation (C-h/j/k/l)
-  use("christoomey/vim-tmux-navigator")
-
-  use("tpope/vim-surround") -- Surround something (y-s-motion[e.g. w]-char to surround)
-  -- Can also delete surrounding char (d-s-motion-char) or change (c-s-motion-char)
-  use("vim-scripts/ReplaceWithRegister") -- (Y-w) then g-r-w to replace
-
-  -- commenting with gc
-  use("numToStr/Comment.nvim")
-
-  --file explorer
-  use("nvim-tree/nvim-tree.lua")
-
-  --icons
-  use("kyazdani42/nvim-web-devicons")
-
-  --status line
-  use("nvim-lualine/lualine.nvim")
-
-  -- Fuzzyfinding - Telescope
-  use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"}) 
-  use({"nvim-telescope/telescope.nvim"})
-
-  --Autocompletion
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-
-  --snippets
-  use("L3MON4D3/LuaSnip")
-  use("saadparwaiz1/cmp_luasnip")
-  use("rafamadriz/friendly-snippets")
-
-  --Managing and installing lsp servers
-  use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
-  
-  --configuring LSP servers
-  use("neovim/nvim-lspconfig")
-  use("hrsh7th/cmp-nvim-lsp")
-  use({"glepnir/lspsaga.nvim", branch = "main"})
-  use("onsails/lspkind.nvim")
-
-
-  -- formatting/linting
-  use("jose-elias-alvarez/null-ls.nvim")
-  use("jayp0521/mason-null-ls.nvim")
-
-  -- treesitter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
-    end,
-  })
-
-  --Auto closing
-  use("windwp/nvim-autopairs")
-  use("windwp/nvim-ts-autotag")
-
-  --React Snippets
-  use("SirVer/ultisnips")
-  use("mlaursen/vim-react-snippets")
-
-  -- More tab control, tab icons, clean tab names
-  use("romgrk/barbar.nvim")
-
-  -- WhichKey
-  use("folke/which-key.nvim");
-
-  -- Icons used by WhichKey
-  use("echasnovski/mini.icons");
-
-  use("lervag/vimtex");
-
-  use("wakatime/vim-wakatime")
-
-  use("f-person/git-blame.nvim")
-  
-  use("debugloop/telescope-undo.nvim")
-
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+lazy.setup({
+  spec = {
+    {
+      "nvim-treesitter/nvim-treesitter",
+      build = function()
+        require("nvim-treesitter.install").update({ with_sync = true })
+      end,
+    },
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+    },
+    {
+      "nvim-telescope/telescope.nvim",
+      tag = "0.1.8",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+      },
+    },
+    {
+      "nvimdev/lspsaga.nvim",
+      config = function()
+          require("lspsaga").setup({})
+      end,
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-tree/nvim-web-devicons",
+      },
+    },
+    "sho-87/kanagawa-paper.nvim",
+    "tpope/vim-surround",
+    "vim-scripts/ReplaceWithRegister", -- (Y-w) then g-r-w to replace
+    "numToStr/Comment.nvim",
+    "nvim-tree/nvim-tree.lua",
+    "kyazdani42/nvim-web-devicons",
+    "nvim-lualine/lualine.nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
+    "onsails/lspkind.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
+    "jayp0521/mason-null-ls.nvim",
+    "windwp/nvim-autopairs",
+    "windwp/nvim-ts-autotag",
+    "SirVer/ultisnips",
+    "mlaursen/vim-react-snippets",
+    "lervag/vimtex",
+    "wakatime/vim-wakatime",
+    "f-person/git-blame.nvim",
+    "debugloop/telescope-undo.nvim",
+    "folke/which-key.nvim",
+    { import = "ross.plugins.lazy" },
+  },
+  install = { 
+    colorscheme = { "kanagawa-paper" }
+  },
+})
