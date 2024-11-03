@@ -38,10 +38,32 @@ cmp.setup({
     { name = "buffer" },
     { name = "path" },
   }),
+  -- formatting = {
+  --   fields = { "abbr", "kind" },
+  --   format = lspkind.cmp_format({
+  --     maxwidth = 18,
+  --     ellipsis_char = "...",
+  --   }),
+  -- },
+  window = {
+    completion = {
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      col_offset = 1,
+      side_padding = 0,
+    },
+    documentation = cmp.config.window.bordered {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    }
+  },
   formatting = {
-    format = lspkind.cmp_format({
-      maxwidth = 50,
-      ellipsis_char = "...",
-    }),
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 30 })(entry, vim_item)
+      local strings = vim.split(kind.kind, "%s", { trimempty = true })
+      kind.kind = " " .. (strings[1] or "") .. " "
+      kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+      return kind
+    end,
   },
 })
