@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 local opt = vim.opt
 -- line numbers
 opt.number = true;
@@ -61,12 +63,13 @@ if vim.g.neovide then
   end)
 end
 
+-- 
 vim.schedule(function()
   vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
   vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#2A2A37" })
 
-  vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#DCD7BA", bg = "NONE", strikethrough = true })
-  vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#82AAFF", bg = "NONE", bold = true })
+  vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#a6a69c", bg = "NONE", strikethrough = true })
+  vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#a6a69c", bg = "NONE", bold = true })
   vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#a6a69c", bg = "NONE", italic = true })
 
   vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#EADFF0", bg = "#B5585F" })
