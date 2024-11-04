@@ -39,16 +39,6 @@ lazy.setup({
         "nvim-lua/plenary.nvim",
       },
     },
-    {
-      "nvimdev/lspsaga.nvim",
-      config = function()
-          require("lspsaga").setup({})
-      end,
-      dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-tree/nvim-web-devicons",
-      },
-    },
     "sho-87/kanagawa-paper.nvim",
     "tpope/vim-surround",
     "vim-scripts/ReplaceWithRegister", -- (Y-w) then g-r-w to replace
@@ -79,6 +69,7 @@ lazy.setup({
     "debugloop/telescope-undo.nvim",
     "folke/which-key.nvim",
     { import = "ross.plugins.lazy" },
+    { import = "ross.plugins.lazylsp" },
   },
   install = { 
     colorscheme = { "kanagawa-paper" }
