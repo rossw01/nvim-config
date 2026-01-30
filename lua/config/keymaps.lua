@@ -13,3 +13,8 @@ vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>", { desc = "Telescop
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Telescope buffers", silent = true })
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Telescope help", silent = true })
 vim.keymap.set("n", "<leader>fc", ":Telescope grep_string<CR>", { desc = "Telescope grep current word", silent = true })
+vim.keymap.set("n", "gd", ":lua require(\"goto-preview\").goto_preview_definition()<CR>", { desc = "Preview definition", silent = true })
+vim.keymap.set("n", "gi", ":lua require(\"goto-preview\").goto_preview_implementation()<CR>", { desc = "Preview implementation", silent = true })
+vim.keymap.set("n", "gD", ":lua require(\"goto-preview\").goto_preview_declaration()<CR>", { desc = "Preview declaration", silent = true })
+vim.keymap.set("n", "gP", ":lua require(\"goto-preview\").close_all_win()<CR>", { desc = "Close all preview windows", silent = true })
+vim.keymap.set("n", "gr", ":lua require(\"goto-preview\").goto_preview_references()<CR>", { desc = "Preview references", silent = true })

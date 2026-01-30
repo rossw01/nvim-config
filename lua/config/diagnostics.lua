@@ -16,6 +16,7 @@ vim.diagnostic.config({
 		severity_sort = true,
 		header = "",
 		format = formatted_diagnostic,
+		prefix = "",
 		suffix = formatted_suffix
 	}
 })
