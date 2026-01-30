@@ -1,0 +1,11 @@
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Open nvim-tree", silent = true })
+vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { desc = "No highlight", silent = true })
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Telescope files", silent = true })
+vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>", { desc = "Telescope grep", silent = true })
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Telescope buffers", silent = true })
+vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Telescope help", silent = true })
+
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window", noremap = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window", noremap = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below window", noremap = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to above window", noremap = true })
