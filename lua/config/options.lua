@@ -1,2 +1,10 @@
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
+vim.opt.signcolumn = "no"
+vim.opt.scrolloff = 10
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.fillchars:append({ eob = " " })
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
