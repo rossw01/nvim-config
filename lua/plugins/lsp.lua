@@ -1,9 +1,3 @@
-vim.lsp.config('*', {
-  float = {
-    border = 'rounded',
-  },
-})
-
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
