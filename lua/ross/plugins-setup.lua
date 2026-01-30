@@ -30,7 +30,6 @@ lazy.setup({
     },
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
     },
     {
       "nvim-telescope/telescope.nvim",
@@ -41,29 +40,21 @@ lazy.setup({
     },
     "sho-87/kanagawa-paper.nvim",
     "tpope/vim-surround",
-    "vim-scripts/ReplaceWithRegister", -- (Y-w) then g-r-w to replace
     "numToStr/Comment.nvim",
-    "nvim-tree/nvim-tree.lua",
     "kyazdani42/nvim-web-devicons",
     "nvim-lualine/lualine.nvim",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
     "onsails/lspkind.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
-    "jayp0521/mason-null-ls.nvim",
     "windwp/nvim-autopairs",
     "windwp/nvim-ts-autotag",
     "SirVer/ultisnips",
     "mlaursen/vim-react-snippets",
-    "lervag/vimtex",
     "wakatime/vim-wakatime",
     "f-person/git-blame.nvim",
     "debugloop/telescope-undo.nvim",
@@ -71,7 +62,9 @@ lazy.setup({
     { import = "ross.plugins.lazy" },
     { import = "ross.plugins.lazylsp" },
   },
-  install = { 
-    colorscheme = { "kanagawa-paper" }
+  dev = {
+    path = "~/code/lua/nvim-plugins",
   },
 })
+
+vim.cmd([[colorscheme kanagawa-paper]])

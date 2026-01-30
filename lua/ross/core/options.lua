@@ -25,7 +25,6 @@ opt.guicursor = "n-v-i-c:block-Cursor"
 
 --appearance
 opt.termguicolors = true
-opt.background = "dark"
 opt.signcolumn = "no" 
 
 --backspace
@@ -44,10 +43,9 @@ opt.scrolloff = 8
 
 opt.fillchars:append {eob = " "}
 
-vim.g.vimtex_view_method = 'zathura'
-
 -- TODO: Move these to their own neovide lua file
 -- hehe its been years and i've still not done it :P
+-- 11/05/2025 i still aint doing it !!!!!
 if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0.1
   vim.g.neovide_input_macos_alt_is_meta = true
@@ -62,6 +60,9 @@ if vim.g.neovide then
     change_scale_factor(1/1.25)
   end)
 end
+
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- 
 vim.schedule(function()

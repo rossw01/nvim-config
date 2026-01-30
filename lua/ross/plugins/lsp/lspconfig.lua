@@ -1,92 +1,116 @@
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then 
-  return
-end
+-- Load cmp_nvim_lsp capabilities
+local ok_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not ok_cmp then return end
 
-local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not cmp_nvim_lsp_status then
-  return
-end
-
-local keymap = vim.keymap
-
--- enable keybinds for available lsp server
-local on_attach = function(client, bufnr)
-  -- set keybinds
-  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
-  keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
-  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
-
-  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
-  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
-  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
-  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-
-  keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-  keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
-end
-
--- used to enable autocompletion
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
+-- Shared on_attach
+local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
+
+local on_attach = function(client, bufnr)
+  keymap.set("n", "gr", "<cmd>Lspsaga finder<CR>", opts)
+  keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+  keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+
+  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+
+  keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
+end
+
+-- Helper to define + enable server
+local function setup(server_name, config)
+  local cfg = vim.tbl_deep_extend("force", {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  }, config or {})
+
+  vim.lsp.config(server_name, cfg)
+  vim.lsp.enable(server_name)
+end
+
+---------------------------------------------------------------------
+-- Language Servers
+---------------------------------------------------------------------
+
+setup("cssls")
+setup("dockerls")
+setup("jsonls")
+setup("ts_ls")
+setup("rnix")
+setup("texlab")
+setup("elp")
+setup("roslyn")
+
+setup("html", {
+  filetypes = { "html" },
 })
 
-lspconfig["cssls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
+setup("emmet_ls", {
+  filetypes = { "html", "heex", "tsx", "jsx", "js", "ts" },
 })
 
-lspconfig["dockerls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
-lspconfig["jsonls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
-lspconfig["ts_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
-lspconfig["rust_analyzer"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
-lspconfig["ruby_lsp"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+setup("ruby_lsp", {
   filetypes = { "ruby", "eruby" },
   mason = false,
-  cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") }
 })
 
-lspconfig["emmet_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+setup("elixirls", {
+  filetypes = { "elixir", "heex" },
 })
 
-lspconfig["clangd"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+setup("clangd", {
+  mason = false,
+  cmd = { vim.fn.expand("clangd") },
   init_options = {
-    compileCommands = "./build/compile_commands.json",
     usePlaceholders = true,
     completeUnimported = true,
     semanticHighlighting = true,
-  }
+  },
 })
 
-lspconfig["texlab"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
+setup("lua_ls", {
+  mason = false,
+  cmd = { vim.fn.expand("lua-lsp") },
+})
+
+setup("rust_analyzer", {
+  mason = false,
+  cmd = { vim.fn.expand("rust-analyzer") },
+  checkOnSave = true,
+  check = {
+    command = "clippy",
+    features = "all",
+  },
+  assist = {
+    importGranularity = "module",
+    importPrefix = "self",
+  },
+  diagnostics = {
+    enable = true,
+    enableExperimental = true,
+  },
+  cargo = {
+    loadOutDirsFromCheck = true,
+    features = "all",
+  },
+  inlayHints = {
+    chainingHints = true,
+    parameterHints = true,
+    typeHints = true,
+  },
+})
+
+setup("jdtls", {
+  mason = false,
+  cmd = {
+    vim.fn.expand("jdtls"),
+    "--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand "~/.local/share/nvim/lombok.jar"),
+  },
 })

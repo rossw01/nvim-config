@@ -3,6 +3,7 @@
 -- MIT license, see LICENSE for more details.
 
 gitblame = require('gitblame')
+local kanagawa_paper = require("lualine.themes.kanagawa-paper-ink")
 
 require('lualine').setup {
   options = {
@@ -10,7 +11,7 @@ require('lualine').setup {
       "packer",
       "NvimTree",
     },
-    theme = 'kanagawa-paper',
+    theme = kanagawa_paper,
     component_separators = {left = "", right = ""},
     section_separators = { left = '', right = '' },
   },

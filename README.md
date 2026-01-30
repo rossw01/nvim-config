@@ -38,5 +38,4 @@
 - vim-react-snippets
 - vim-surround
 - vim-wakatime
-- vimtex
 - which-key.nvim

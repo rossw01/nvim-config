@@ -9,6 +9,7 @@ return {
       edit = "<CR>",
     },
     ui = {
+      virtual_text = true,
       sign = false,
     },
   },
