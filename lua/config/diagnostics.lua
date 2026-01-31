@@ -17,6 +17,6 @@ vim.diagnostic.config({
 		header = "",
 		format = formatted_diagnostic,
 		prefix = "",
-		suffix = formatted_suffix
-	}
+		suffix = formatted_suffix,
+	},
 })

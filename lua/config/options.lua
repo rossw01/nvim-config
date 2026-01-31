@@ -10,3 +10,5 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.winborder = "rounded"
 vim.opt.expandtab = true
+vim.opt.laststatus = 0
+vim.opt.ruler = false
